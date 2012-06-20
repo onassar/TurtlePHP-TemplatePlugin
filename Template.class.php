@@ -32,11 +32,15 @@
      */
     abstract class Template
     {
+        
         /**
          * init
          * 
          * Initializes the template plugin by registering a callback method for
          * converting tags.
+         * 
+         * Passes a <header> to the buffer, recording the duration for the
+         * templating process.
          * 
          * @access public
          * @static
@@ -47,8 +51,21 @@
             // templating callback
             \Turtle\Request::addCallback(function($buffer) {
 
+                // start time
+                $start = microtime(true);
+
                 // render the markup through the templating engine
-                return \Template::render($buffer);
+                $rendered = \Template::render($buffer);
+
+                // end time
+                $end = microtime(true);
+
+                // pass as header
+                $duration = round($end - $start, 4);
+                header('TurtlePHP-Templating: ' . ($duration));
+
+                // return rendered
+                return $rendered;
             });
         }
     }
