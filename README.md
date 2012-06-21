@@ -43,7 +43,7 @@ that tag through the `Template::addTag` method.
 ### Sample Templating Performance Header
 The following header will be sent along with the response by the framework:
 
-```bash
+```
 TurtlePHP-Templating: 0.0001
 ```
 
