@@ -17,6 +17,8 @@ The only other action of this plugin is recording the performance. The
 performance (in seconds) is passed as the `TurtlePHP-Templating` header.
 
 ### Sample Usage
+```php
+<?php
 
     // template
     require_once APP . '/vendors/PHP-Template/Template.class.php';
@@ -27,6 +29,8 @@ performance (in seconds) is passed as the `TurtlePHP-Templating` header.
     // plugin
     require_once APP . '/vendors/TurtlePHP-TemplatePlugin/Template.class.php';
     \Plugin\Template::init();
+
+```
 
 This will simply include the required classes, setup the `HelloWorld` tag to be
 converted programmatically (through the `HelloWorldTag.class.php` file), and
