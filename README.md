@@ -7,7 +7,7 @@ their respective programmatic response.
 It has the PHP-Template library is a requirement. It fails if it hasn't been
 included.
 
-This library acts primarily as a wrapper. When look at the
+This library acts primarily as a wrapper. When looking at the
 [source](https://github.com/onassar/TurtlePHP-TemplatePlugin/blob/master/Template.class.php),
 there isn't really much to it. A `Request` callback is defined which accepts the
 buffer contents as a parameter, and runs it through the `Template::render`
