@@ -32,11 +32,10 @@
      */
     abstract class Template
     {
-        
         /**
          * init
          * 
-         * Initializes the template plugin by registering a callback method for
+         * Initializes the template-plugin by registering a callback method for
          * converting tags.
          * 
          * Passes a <header> to the buffer, recording the duration for the
@@ -48,8 +47,11 @@
          */
         public static function init()
         {
+            // retrieve request
+            $request = \Turtle\Application::getRequest();
+
             // templating callback
-            \Turtle\Request::addCallback(function($buffer) {
+            $request->addCallback(function($buffer) {
 
                 // start time
                 $start = microtime(true);
