@@ -28,7 +28,8 @@ performance (in seconds) is passed as the `TurtlePHP-Templating` header.
 
     // plugin
     require_once APP . '/vendors/TurtlePHP-TemplatePlugin/Template.class.php';
-    \Plugin\Template::init();
+    $request = \Turtle\Application::getRequest();
+    (new \Plugin\Template($request));
 
 ```
 
@@ -37,8 +38,8 @@ converted programmatically (through the `HelloWorldTag.class.php` file), and
 initiate the `Template` plugin (as can be seen through the `Plugin` namespace).
 
 Everything else is done automatically. If you want any other custom-tags to be
-programtically replaced, check out the PHP-Template library, and remember to add
-that tag through the `Template::addTag` method.
+programatically replaced, check out the PHP-Template library, and remember to
+add that tag through the `Template::addTag` method.
 
 ### Sample Templating Performance Header
 The following header will be sent along with the response by the framework:
