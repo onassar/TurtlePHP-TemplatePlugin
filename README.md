@@ -16,6 +16,9 @@ method.
 The only other action of this plugin is recording the performance. The
 performance (in seconds) is passed as the `TurtlePHP-Templating` header.
 
+Class is instantiable rather than abstract to allow for multiple instances on
+subrequests.
+
 ### Sample Usage
 ```php
 <?php
